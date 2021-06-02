@@ -55,21 +55,33 @@
                         <div class="form-group">
                             {!! Form::text('userName', '', ['class' => 'form-control']) !!}
                         </div>
+                        @error('userName')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
 
                         {!! Form::label('telNumber', 'Номер телефона', ['class' => 'form-label']) !!}
 
                         <div class="form-group">
                             {!! Form::tel('telNumber', '', ['class' => 'form-control']) !!}
                         </div>
+                        @error('telNumber')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
 
                         {!! Form::label('userMessage', 'Сообщение', ['class' => 'form-label']) !!}
 
                         <div class="form-group">
                             {!! Form::textarea('userMessage', '', ['class' => 'form-control']) !!}
                         </div>
+                        @error('userMessage')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
+
                         <div class="form-group">
                             {!! Form::submit("Отправить", ['class' => 'btn btn-success']) !!}
-
                         </div>
 
                         {!! Form::close() !!}
